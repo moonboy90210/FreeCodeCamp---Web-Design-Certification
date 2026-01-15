@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Required meta tags -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <title>Practice Makes Perfect</title>
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+    <div class="container">
+      <h2>
+        This has to come to an end eventually but what else would it matter.
+        You have to keep going till the wheels fall off.
+      </h2>
+
+      <div>
+        <div class="btn-group-vertical" role="group" aria-label="">
+          <button type="button" class="btn btn-secondary">First One</button>
+          <button type="button" class="btn btn-secondary">New User</button>
+          <div class="btn-group" role="group">
+            <button id="dropdownId" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              More
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <a class="dropdown-item" href="#">Create Account</a>
+              <a class="dropdown-item" href="#">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn">Login</button>
+    </div>
+
+    <div>
+      <p>This is an &lt;img /&gt; element</p>
+      <div id="music-player">
+        <audio src="https://open.spotify.com/track/7rPAWXc1miqF6AeJ5U0nMA?si=f2af67301c9a4734" controls></audio>
+
+        <div class="container">
+          <iframe data-testid="embed-iframe"
+            src="https://open.spotify.com/embed/track/7rPAWXc1miqF6AeJ5U0nMA?utm_source=generator&theme=0" width="514"
+            height="312" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <input type="image" alt="Descriptive text goes here"
+        src="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png" width="540" height="310">
+    </div>
+
+    <section>
+      <div class="container">
+        <dl>
+          <dt>TAZ</dt>
+          <dd>Timothy Adedotun Zu'l Zorander </dd>
+        </dl>
+      </div>
+    </section>
+
+    <section>
+      <span id="volume-label">
+        Volume
+      </span>
+      <span id="volume-description">Adjust the sound level</span>
+      <input type="range" aria-labelledby="volume-label volume-description" min="0" max="100" value="50">
+
+      </div>
+      <button type="button">Mute</button>
+
+    </section>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+
+  <script>
+    const passwordEl = document.getElementById("password");
+    const passwordHelpText = document.getElementById("password-help");
+
+    passwordEl.addEventListener("input", (e) => {
+      const userInput = e.target.value;
+      passwordHelpText.style.color = userInput.length >= 8 ? "green" : "red";
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8">
+	<meta name="description" content="This is a travel agency website to guide you on your favorite trips and vacations ">
+	<title>Travel Agency Page</title>
+
+  </head>
+  <body>
+	
+	<h1>Discover NIgeria</h1>
+	<p>Nigeria is rich in many tourist locations. High mountains and clear coastal waters provide visitors with a breathtaking experience through their time here.</p>
+	<h2>Packages</h2>
+	<p>There are a couple travel packages available for new and returning visitors.</p>
+	<ul>
+		<li><a href="https://www.freecodecamp.org/learn" target="_blank">Group Travels</a></li>
+		<li><a href="https://www.freecodecamp.org/learn" target="_blank">Private Tours</a></li>
+	</ul>
+	<h2>Top Itineraries</h2>
+	<figure>
+		
+<a href="https://www.freecodecamp.org/learn"><img src="https://cdn.freecodecamp.org/curriculum/labs/colosseo.jpg" alt="Place named colosseo"></a>		<figcaption>Placed named Colosseo</figcaption>
+	</figure>
+	<figure>
+<a href="https://www.freecodecamp.org/learn">		<img src="https://cdn.freecodecamp.org/curriculum/labs/alps.jpg" alt="Place named alps"></a>
+		<figcaption>Placed named Alps</figcaption>
+	</figure>
+		<figure>
+<a href="https://www.freecodecamp.org/learn">		<img src="https://cdn.freecodecamp.org/curriculum/labs/sea.jpg" alt="Place named sea"></a>
+		<figcaption>Placed named Sea</figcaption>
+	</figure>
+
+
+  </body>
+  </html> -->
