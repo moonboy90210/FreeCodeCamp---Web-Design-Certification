@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>To-Do List</title>
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #000000;
+			padding: 20px;
+		}
+
+		.main {
+			max-width: 450px;
+			margin: 0 auto;
+			background-color: #ffffff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		}
+
+		.header {
+			text-align: center;
+			color: black;
+		}
+
+		.todo-list {
+			list-style-type: none;
+			padding: 10px;
+			margin: 0 auto;
+		}
+
+		.list-item label {
+			font-size: 1.2rem;
+		}
+
+		.list-item {
+			background-color: aquamarine;
+			border-radius: 10px;
+			height: 70px;
+			padding: 20px;
+			margin-bottom: 20px;
+		}
+
+		.sub-item {
+			padding-left: 50px;
+			margin-top: 15px;
+		}
+		.sub-item li {
+			list-style-type: disc;
+		}
+
+		a {
+			text-decoration: none;
+
+		}
+
+		a:link {
+			color: blue;
+		}
+
+		a:visited {
+			color: green;
+		}
+
+		a:hover {
+			color: red;
+		}
+
+		a:focus {
+			outline: 2px solid blue;
+		}
+
+		a:active {
+			color: orange;
+		}
+	</style>
+</head>
+
+<body>
+	<main class="main">
+		<div class="header">
+			<h1>My To-Do List</h1>
+		</div>
+		<ul class="todo-list">
+
+			<li class="list-item">
+				<input type="checkbox" name="wake-up" id="wake-up">
+				<label for="wake-up">Wake Up</label>
+
+				<ul class="sub-item">
+					<li><a href="#" target="_blank" class="sub-item-link">Check Tutorial</a></li>
+				</ul>
+			</li>
+			<li class="list-item">
+				<input type="checkbox" name="brush" id="brush">
+				<label for="brush">Brush Teeth</label>
+
+				<ul class="sub-item">
+					<li><a href="#" target="_blank" class="sub-item-link">Check Tutorial</a></li>
+				</ul>
+			</li>
+			<li class="list-item">
+				<input type="checkbox" name="pray" id="pray">
+				<label for="pray">Say a Prayer</label>
+
+				<ul class="sub-item">
+					<li><a href="#" target="_blank" class="sub-item-link">Go to Bible</a></li>
+				</ul>
+			</li>
+			<li class="list-item">
+				<input type="checkbox" name="code" id="code">
+				<label for="code">Start Coding!</label>
+
+				<ul class="sub-item">
+					<li><a href="#" target="_blank" class="sub-item-link">Open Code Base</a></li>
+				</ul>
+			</li>
+		</ul>
+	</main>
+</body>
+
+</html>
