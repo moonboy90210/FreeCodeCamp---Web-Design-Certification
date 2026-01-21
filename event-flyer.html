@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Event Flyer</title>
+	<style>
+		body {
+			padding: 50px 0;
+			margin: 0 auto;
+			width: 100vw;
+			min-height: calc(100vh - 100px);
+			background-color: #f9f9f9;
+		}
+
+		main {
+			max-width: 800px;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: row;
+		}
+		@media (max-width: 600px) {
+			main {
+				flex-direction: column;
+				padding: 0 20px;
+				justify-content: center;
+				align-items: center;
+			};
+		}
+
+		hr {
+			width: 90%;
+			height: 3px;
+			background-color: brown;
+			border: none;
+		}
+
+		header,
+		footer {
+			text-align: center;
+			font-family: Arial, sans-serif;
+		}
+
+		h1,
+		h2,
+		p {
+			font-family: Arial, sans-serif;
+		}
+
+		a {
+			color: brown;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 10px;
+			margin-top: 50px;
+		}
+
+		ul {
+			list-style-type: disc;
+			padding-left: 20px;
+		}
+		ul li {
+			margin-bottom: 10px;
+		}
+
+		section {
+			margin-bottom: 30px;
+			width: 90%;
+		}
+
+		footer p {
+			font-size: 0.9rem;
+			color: gray;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<img src="https://placehold.co/300x200" alt="Charity run">
+		<h1>Annual Charity Run</h1>
+		<p>Join us for a day of fun and fitness to support a great cause!</p>
+	</header>
+	<hr>
+	<main>
+		<section>
+			<h2>Event Details</h2>
+			<p><strong>Date:</strong> July 15, 2024</p>
+			<p><strong>Time:</strong> 8:00 AM - 2:00 PM</p>
+			<p><strong>Location:</strong> Central Park, NYC</p>
+
+		</section>
+
+		<section>
+			<h2>Registration</h2>
+			<p>Register online at <a href="https://www.charityrun2024.org" target="_blank" rel="noopener">www.charityrun2024.org</a>
+			</p>
+			<p>Early bird discount available until June 1st!</p>
+
+		</section>
+
+		<section>
+			<h2>Activities</h2>
+			<ul>
+				<li>5K and 10K Runs</li>
+				<li>Fun Walk</li>
+				<li>Kids' Activities</li>
+				<li>Live Music and Food Stalls</li>
+			</ul>
+		</section>
+
+	</main>
+	<hr>
+	<footer>
+		<p>&copy; 2024 Annual Charity Run. All rights reserved.</p>
+	</footer>
+</body>
+
+</html>
