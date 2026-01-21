@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog Post Card</title>
+	<style>
+		body {
+			background-color: brown;
+		}
+		.blog-post-card {
+			background: white;
+			border-radius: 10px;
+			text-align: center;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			width: 400px;
+			max-width: 400px;
+			margin: 20px auto;
+			overflow: hidden;
+			font-family: Arial, sans-serif;
+		}
+		.post-img{
+			width: 100%;
+			height: auto;
+			border-bottom: 2px solid #ddd;
+		}
+		.post-content {
+			padding: 15px;
+		}
+		.post-title, .post-excerpt {
+			margin: 20px;
+			color: brown;
+		}
+		.read-more {
+			display: inline-block;
+			margin: 15px 10px;
+			padding: 10px 20px;
+			background-color: brown;
+			color: white;
+			text-decoration: none;
+			border-radius: 5px;
+		}
+		.read-more:hover {
+			background-color: darkred;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<div class="blog-post-card">
+			<img class="post-img" src="https://cdn.freecodecamp.org/curriculum/labs/cover-photo.jpg" alt="blog cover photo">
+			<div class="post-content">
+				<h2 class="post-title">Coding as a Tool</h2>
+				<p class="post-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id obcaecati perferendis nulla
+					 magnam deserunt. Harum aliquid, doloribus quia ratione quibusdam ab officia, laudantium deserunt magni vero consectetur quasi laboriosam ea!</p>
+				<a href="#" class="read-more">Read More</a>
+			</div>
+		</div>
+	</main>
+	
+</body>
+</html>
