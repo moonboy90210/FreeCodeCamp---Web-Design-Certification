@@ -23,21 +23,21 @@ let str1 = 'Hello';
 let str2 = ' The World'; 
 let str3 = ' is yours!!!!!'
 
-let result = str1.concat(str3); 
+let result = str1.concat(str2); 
 console.log(result); // "Hello  The World is yours!"
 
 // ---- data types ------
-let newData = 1324;
-let newData2 = ' is another 4 digit number';
+let newNote = 1324;
+let newNotes = ' is another 4 digit number';
 
-let results = newData + newData2;
+// let results = newNote + newNotes;
 
-// let results = newData.concat(newData2);
-console.log(results);
+let results = newNote.toString().concat(newNotes);
+console.log(results); // 1324 is another 4 digit number
 
 let isAvailable = true;
 // isAvailable = "The value is " + isAvailable;
-console.log(isAvailable);
+console.log(isAvailable); 
 
 
 
