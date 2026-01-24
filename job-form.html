@@ -1,11 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Job Application Form</title>
+	<style>
+		body {
+			background-color: midnightblue;
+			color: whitesmoke;
+		}
+
+		.container {
+			max-width: 600px; 
+			width: 80%;
+
+			margin: 20px auto;
+			padding: 10px 20px;
+			background-color: #ffffff1a;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			font-family: Arial, sans-serif;
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		.description {
+			font-size: 1.2rem;
+			margin-bottom: 20px;
+		}
+
+		fieldset {
+			border: 1px solid gray;
+			border-radius: 5px;
+			margin: 20px 0;
+			padding: 20px;
+		}
+
+		fieldset legend {
+			font-size: 1.3rem;
+			font-weight: 600;
+		}
+
+		label {
+			font-size: 1.2rem;
+		}
+
+		label:not(.contact-method) {
+			display: block;
+			margin: 10px 0;
+		}
+
+		input:not(.contact-method-radio-btn),
+		textarea {
+			width: 95%;
+			padding: 10px;
+			background-color: #ffffff1a;
+			border: none;
+			border-bottom: 2px solid gray;
+			color: whitesmoke;
+			font-size: 1rem;
+			resize: vertical;
+		}
+
+		select {
+			width: 100%;
+			padding: 10px;
+			background-color: #ffffff1a;
+			border: none;
+			border-bottom: 2px solid gray;
+			color: whitesmoke;
+			font-size: 1rem;
+		}
+
+		.radio-group {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.radio-btn {
+			margin-right: 10px;
+		}
+
+		button {
+			background-color: darkorange;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 1.2rem;
+			cursor: pointer;
+			margin-top: 20px;
+		}
+
+		button:hover {
+			background-color: orangered;
+		}
+	</style>
 </head>
+
 <body>
-	
+	<div class="container">
+		<div>
+			<h1 class="center">Job Application Form</h1>
+			<p class="description center">Please fill out the form adequately for a position</p>
+		</div>
+		<form action="">
+
+			<label for="name">Full Name: </label>
+			<input type="text" id="name" name="name" placeholder="Enter your Full Name">
+			<label for="email">Email: </label>
+			<input type="email" name="email" id="email" placeholder="Enter you email">
+			<label for="phone">Phone Number: </label>
+			<input type="tel" name="phone" id="phone" placeholder="Enter your phone number">
+			<label for="position">Position: </label>
+			<select name="position" id="positon">
+				<option value="manager">Manager</option>
+				<option value="developer">Developer</option>
+				<option value="designer">Graphic Designer</option>
+				<option value="intern">Intern</option>
+
+			</select>
+			<fieldset class="radio-group">
+				<legend>Availability</legend>
+				<label for="availability">Full-Time</label>
+				<input type="radio" name="availability" id="full-time" class="radio-btn">
+				<label for="availability">Part-time</label>
+				<input type="radio" name="availability" id="part-time" class="radio-btn">
+
+			</fieldset>
+			<label for="message">Tell us why you want this job?</label>
+
+			<textarea name="message" id="message" placeholder="Enter your message" cols="4" rows="3"></textarea>
+
+			<button type="submit">Submit Application</button>
+		</form>
+	</div>
 </body>
+
 </html>
