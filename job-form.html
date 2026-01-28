@@ -12,7 +12,7 @@
 		}
 
 		.container {
-			max-width: 600px; 
+			max-width: 600px;
 			width: 80%;
 
 			margin: 20px auto;
@@ -46,6 +46,7 @@
 
 		label {
 			font-size: 1.2rem;
+
 		}
 
 		label:not(.contact-method) {
@@ -53,16 +54,42 @@
 			margin: 10px 0;
 		}
 
+		label:checked {
+			color: red;
+		}
+
+		input:first-of-type {
+			border-radius: 20px;
+		}
+
 		input:not(.contact-method-radio-btn),
 		textarea {
 			width: 95%;
 			padding: 10px;
 			background-color: #ffffff1a;
+			margin-bottom: 10px;
 			border: none;
 			border-bottom: 2px solid gray;
 			color: whitesmoke;
 			font-size: 1rem;
 			resize: vertical;
+		}
+
+		input:focus,
+		textarea:focus {
+			border-color: brown;
+		}
+
+		input:invalid,
+		select:invalid,
+		textarea:invalid {
+			border-color: red;
+		}
+
+		input:valid,
+		select:valid,
+		textarea:valid {
+			border-color: green;
 		}
 
 		select {
@@ -75,13 +102,24 @@
 			font-size: 1rem;
 		}
 
-		.radio-group {
-			display: flex;
-			flex-direction: column;
+		select option {
+			background-color: blueviolet;
 		}
 
-		.radio-btn {
-			margin-right: 10px;
+
+		.radio-btn:checked {
+			color: red;
+		}
+
+		.radio-group input[type="radio"] {
+			border-color: aqua;
+			background-color: black;
+			box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+		}
+
+		.radio-group input[type="radio"]:checked + label {
+			color: white;
+			background-color: green; 
 		}
 
 		button {
@@ -89,6 +127,7 @@
 			color: white;
 			padding: 10px 20px;
 			border: none;
+			width: 100%;
 			border-radius: 5px;
 			font-size: 1.2rem;
 			cursor: pointer;
@@ -114,9 +153,10 @@
 			<label for="email">Email: </label>
 			<input type="email" name="email" id="email" placeholder="Enter you email">
 			<label for="phone">Phone Number: </label>
-			<input type="tel" name="phone" id="phone" placeholder="Enter your phone number">
+			<input type="number" name="phone" id="phone" placeholder="Enter your phone number">
 			<label for="position">Position: </label>
-			<select name="position" id="positon">
+			<select name="position" id="position">
+				<option value="">select</option>
 				<option value="manager">Manager</option>
 				<option value="developer">Developer</option>
 				<option value="designer">Graphic Designer</option>
@@ -125,10 +165,12 @@
 			</select>
 			<fieldset class="radio-group">
 				<legend>Availability</legend>
-				<label for="availability">Full-Time</label>
-				<input type="radio" name="availability" id="full-time" class="radio-btn">
-				<label for="availability">Part-time</label>
-				<input type="radio" name="availability" id="part-time" class="radio-btn">
+				<label for="full-time" class="contact-method">Full-Time</label>
+				<input type="radio" class="contact-method-radio-btn" name="availability" id="full-time"
+					class="radio-btn" value="full-time">
+				<label for="part-time" class="contact-method">Part-time</label>
+				<input type="radio" class="contact-method-radio-btn" name="availability" id="part-time"
+					class="radio-btn" value="part-time">
 
 			</fieldset>
 			<label for="message">Tell us why you want this job?</label>

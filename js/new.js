@@ -28,7 +28,7 @@ console.log(result); // "Hello  The World is yours!"
 
 // ---- data types ------
 let newNote = 1324;
-let newNotes = ' is another 4 digit number';
+let newNotes = ' is another 4 \ndigit number';
 
 // let results = newNote + newNotes;
 
@@ -39,5 +39,37 @@ let isAvailable = true;
 // isAvailable = "The value is " + isAvailable;
 console.log(isAvailable); 
 
+let greeting = "hello";
+console.log(greeting[1]); // "e"
+
+let newGreeting = greeting[0] + greeting[3];
+console.log(newGreeting); // "hl"
 
 
+let stat = "many people will cashout"
+let tellStat = "hello," + " " + stat;
+console.log(tellStat);
+
+let carDealer =  {
+  name: "Polanco",
+  occupation: "Car dealer"
+}
+let stati = "many people will cashout"
+let tellStati = `hello, ${stati} and everyone will visit ${carDealer.name} who is a ${carDealer.occupation}.`;
+console.log(tellStati);
+
+
+//------------ using prompt -----------------
+
+//  <button id="prompt-btn">Show Prompt</button>
+// <p id="output"></p>
+
+
+
+
+const btn = document.getElementById("prompt-btn");
+const output = document.getElementById("output");
+btn.addEventListener("click", () => {
+  const userName = prompt("What is your name?", "Guest");
+  output.textContent = "Hello, " + userName + "!";
+});
