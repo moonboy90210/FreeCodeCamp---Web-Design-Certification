@@ -67,9 +67,21 @@ console.log(tellStati);
 
 
 
-const btn = document.getElementById("prompt-btn");
-const output = document.getElementById("output");
-btn.addEventListener("click", () => {
-  const userName = prompt("What is your name?", "Guest");
-  output.textContent = "Hello, " + userName + "!";
-});
+// const btn = document.getElementById("prompt-btn");
+// const output = document.getElementById("output");
+// btn.addEventListener("click", () => {
+//   const userName = prompt("What is your name?", "Guest");
+//   output.textContent = "Hello, " + userName + "!";
+// });
+
+
+// ---- using string search and slice -----
+
+let phrase = "this is a phrase";
+let resulter = phrase.includes("is");
+console.log(resulter);
+
+//  slice 
+
+let resulterr = phrase.slice(-6);
+console.log(resulterr)
