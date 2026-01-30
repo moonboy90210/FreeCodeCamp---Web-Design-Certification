@@ -84,4 +84,10 @@ console.log(resulter);
 //  slice 
 
 let resulterr = phrase.slice(-6);
-console.log(resulterr)
+console.log(resulterr) 
+
+
+let phrase1 = "   this is a white space phrase sentence    "
+console.log(phrase1);
+let trimmedPhrase = phrase1.trim();
+console.log(trimmedPhrase);
