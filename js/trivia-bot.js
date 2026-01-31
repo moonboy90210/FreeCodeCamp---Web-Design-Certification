@@ -24,3 +24,10 @@ console.log("It was fun sharing these facts with you. Goodbye! - " + botName + "
 
 
 // -----END OF TRIVIA BOT ----
+
+
+// alternative using interpolation method
+let newSolution = "This is gives same result using a different interpolation method:";
+console.log(newSolution);
+console.log(`My name is ${botName} and I live on ${botLocation}.`);
+console.log(`My favorite programming language is ${favoriteLanguage}.`);

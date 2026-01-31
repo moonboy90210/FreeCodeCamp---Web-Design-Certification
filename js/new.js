@@ -91,3 +91,7 @@ let phrase1 = "   this is a white space phrase sentence    "
 console.log(phrase1);
 let trimmedPhrase = phrase1.trim();
 console.log(trimmedPhrase);
+
+
+const organization = "freeCodeCamp";
+console.log(organization.indexOf("f")); 
