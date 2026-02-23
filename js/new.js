@@ -1,4 +1,99 @@
+// booleans
 
+let isOldEnoughToDrink = false;
+
+if (isOldEnoughToDrink) {
+  console.log("You're old enough to drink");
+} else {
+  console.log("You're not old enough to drink");
+}
+
+console.log(10 == 10);
+return;
+
+
+// FCC LAB - Debug Increment and Decrement Operator Errors in a Buggy App
+
+let counter = 10;
+console.log(`Counter is currently ${counter}`);
+
+let updatedCounter = ++counter;
+console.log(`Counter is now ${updatedCounter}`);
+
+let score = 8;
+console.log(`Score is currently ${score}`);
+
+let finalScore = score++;
+console.log(`Score is still ${finalScore}`);
+
+let coins = 3;
+console.log(`Coins is currently ${coins}`);
+
+let updatedCoins = --coins;
+console.log(`Coins is now ${updatedCoins}`);
+
+let health = 7;
+console.log(`Health is currently ${health}`);
+
+let newHealth = health--;
+console.log(`Health is still ${newHealth}`);
+
+
+
+//  FCC prefix & postfix
+
+ let x = 10;
+console.log(++x);
+
+let a = 13;
+let b = (++a);
+console.log(b);
+
+let c = 24;
+let d = (c++);
+console.log(d);
+
+// ======== compound operator behaviour =========
+
+let num = 5;
+num = num + 2
+// use instead
+let numm = 537;
+numm += 223;
+console.log(numm);
+
+let total = 30;
+total *= 3;
+console.log(total);
+
+let scores = 76;
+let newscores = scores -= 30;
+console.log(newscores);
+
+
+
+
+// FCC lab - Type coersion
+const firstResult = 5 + 10;
+console.log(`5 + 10 = ${firstResult}`);
+
+const secondResult = "8" - 5;
+console.log(`8 - 5 = ${secondResult}`);
+
+const thirdResult = 1 + 5;
+console.log(`1 + 5 = ${thirdResult}`);
+
+const fourthResult = 0 + 8;
+console.log(`0 + 8 = ${fourthResult}`);
+
+const fifthResult = 10 * 2;
+console.log(`10 * 2 = ${fifthResult}`);
+
+const sixthResult = false + 22;
+console.log(`0 + 22 = ${sixthResult}`);
+
+
+return;
 
 // concatenation of strings 
 
@@ -94,4 +189,38 @@ console.log(trimmedPhrase);
 
 
 const organization = "freeCodeCamp";
-console.log(organization.indexOf("f")); 
+console.log(organization.indexOf("f"));  
+
+
+// ======== NUMBERS ======
+// (+)
+const num1 = 123;
+const num2 = 34;
+const num3 = 89;
+
+const result1 = num1 + num2;
+const result2 = num1 + num3;
+const result3 = num1 + num2 + num3;
+
+console.log(result1);
+
+// (-)
+
+const difference = 1473 - 874;
+console.log(difference);
+
+// (*)
+const num11 = 123;
+const num22 = 34;
+const num33 = 89;
+
+const result11 = num1 * num2;
+const result22 = num1 * num3;
+const result33 = num1 * num2 * num3;
+
+// concatinating strings & number
+
+
+const concat1 = '20' + 5;
+console.log(concat1);
+
