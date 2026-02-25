@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Location Button</title>
+	<style>
+		/* Basic styling for the button */
+		.location-btn {
+			background-color: #4CAF50;
+			/* Green */
+			border: none;
+			color: white;
+			padding: 12px 24px;
+			text-align: center;
+			font-size: 16px;
+			cursor: pointer;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+
+		.location-btn:hover {
+			background-color: #45a049;
+			/* Darker green on hover */
+		}
+
+		#message {
+			/* margin-top: 20px; */
+			font-size: 18px;
+			font-weight: bold;
+			color: #333;
+		}
+		.alert-box {
+			background: #4CAF50;
+			color: #333;
+			/* margin: auto; */
+			text-align: center;
+			padding: 30px 0;
+			width: 100%;
+			height: 50px;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Button -->
+	<button class="location-btn" onclick="checkLocationn()">Check Location</button>
+	<p>Click the button to check location.</p>
+
+	<div class="alert-box" id="message">
+
+	</div>
+	<script>
+
+		// Variables
+		const locay = "Stevs place";
+		const mallLocay = "the Mall";
+
+		// Toggle state (starts at Stevs place) 
+		let atStevsPlace = true;
+
+		function checkLocationn() {
+			// Flip the toggle each time button is clicked 
+			atStevsPlace = !atStevsPlace;
+			// Decide message based on toggle 
+			const liveLocation = atStevsPlace ? `Yes, I'm at ${locay}` : `No, i'm at ${mallLocay}`;
+			// Show alert 
+			// console.log(liveLocation);
+			// Update the page text instead of alert 
+			document.getElementById("message").textContent = liveLocation;
+			// alert(liveLocation);
+
+		}
+	</script>
+</body>
+
+</html>
+

@@ -1,3 +1,39 @@
+
+
+
+
+
+
+
+// COnditionals (IF/ELSE)============
+let fName = "Taz";
+let age = 25;
+
+if (fName == age ) {
+  console.log("Your name is correct");
+} else {
+  console.log("Incorrect name");
+}
+
+// IF/ELSE Shorthand
+
+// condition ? expressionIfTrue : expressionIfFalse;
+// const ternary = condition ? expressionTrue : expressionFalse; 
+
+const day = "Wednesday";
+const day1 = "Tuesday"
+
+const todayDate = day !== day1 ? `yes, it's ${day}!` : `No, it's not ${day1}!`;
+
+console.log(`${todayDate}`);
+
+ const location = "Stevs place"
+ const mallLocay = "the Mall"
+  const liveLocation = location !== location ? `yes I'm at ${location}` : `No hes at ${mallLocay}`;
+  console.log(liveLocation);
+
+
+return;
 // booleans
 
 let isOldEnoughToDrink = false;
