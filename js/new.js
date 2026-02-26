@@ -1,6 +1,21 @@
 
+const userSettings = { 
+  theme: "dark",
+  volume: 0,
+  notification: null,
+  network: 'LTE',
+  tracking: false,
+};
+
+let theme = userSettings.notification ?? 'tone';
+console.log(theme);
+
+// && check if both values are true 
+// || check if one the values are true
+// ?? displays the second value if the first is null or undefined  
 
 
+let newUser = condition ? expressionIfTrue : expressionIfFalse; 
 
 
 
