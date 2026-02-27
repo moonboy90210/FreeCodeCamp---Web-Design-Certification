@@ -1,4 +1,17 @@
 
+// FCC lab - mathbot
+
+
+//  JS math methods 
+
+const randomNum = Math.random();
+console.log(randomNum);
+
+Math.ceil()
+Math.floor()
+Math.round()
+
+
 const userSettings = { 
   theme: "dark",
   volume: 0,
@@ -15,7 +28,7 @@ console.log(theme);
 // ?? displays the second value if the first is null or undefined  
 
 
-let newUser = condition ? expressionIfTrue : expressionIfFalse; 
+// let newUser = condition ? expressionIfTrue : expressionIfFalse; 
 
 
 
