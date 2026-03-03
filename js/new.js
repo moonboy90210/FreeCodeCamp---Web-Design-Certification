@@ -1,11 +1,18 @@
 
-// FCC lab - mathbot
+// parseFloat()  parseInt()
 
+let price = 23.32;
+let rate = 3.5;
+
+const total1 = price + (price * rate);
+console.log(`Total: $${total1.toFixed(2)}`);
+
+return;
 
 //  JS math methods 
 
 const randomNum = Math.random();
-console.log(randomNum);
+console.log(randomNum); 
 
 Math.ceil()
 Math.floor()
