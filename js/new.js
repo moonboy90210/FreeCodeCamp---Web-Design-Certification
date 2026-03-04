@@ -1,50 +1,102 @@
+// functions ============
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+greet("Somto");
 
-// parseFloat()  parseInt()
+const sum = (width, height) => width * height;
+console.log(sum(3,21));
+
+return;
+
+
+
+
+
+
+
+const currentWeather = {
+  avrgWeather: "Sunny",
+  avrgTemp: 26,
+};
+const newWeather = {
+  weather: "Cloudy",
+  temp: 23,
+};
+
+if (newWeather.weather !== currentWeather.avrgWeather && newWeather.temp <= currentWeather.avrgTemp) {
+  console.log(`It's ${newWeather.temp}deg right now. The weather outside is ${newWeather.weather}`);
+
+} else {
+    console.log(`It's ${currentWeather.avrgTemp}deg right now. The weather outside is ${currentWeather.avrgWeather}`);
+}
+// switch caseX
+
+let selectColor = 5;
+
+switch (selectColor) {
+  case 1:
+    console.log("Blue");
+    break;
+  case 2:
+    console.log("Red");
+    break;
+  case 3:
+    console.log("White");
+    break;
+  case 4:
+    console.log("Yellow");
+    break;
+  case 5:
+    console.log("Purple");
+    break;
+  case 6:
+    console.log("Green");
+    break;
+  default:
+    console.log("Select color between 1 and 6.");
+    break;
+}
+
+return;
+
+//  JS math methods
 
 let price = 23.32;
 let rate = 3.5;
 
-const total1 = price + (price * rate);
+const total1 = price + price * rate;
 console.log(`Total: $${total1.toFixed(2)}`);
 
-return;
-
-//  JS math methods 
-
 const randomNum = Math.random();
-console.log(randomNum); 
+console.log(randomNum);
 
-Math.ceil()
-Math.floor()
-Math.round()
+Math.ceil();
+Math.floor();
+Math.round();
 
-
-const userSettings = { 
+const userSettings = {
   theme: "dark",
   volume: 0,
   notification: null,
-  network: 'LTE',
+  network: "LTE",
   tracking: false,
 };
 
-let theme = userSettings.notification ?? 'tone';
+let theme = userSettings.notification ?? "tone";
 console.log(theme);
 
-// && check if both values are true 
+// && check if both values are true
 // || check if one the values are true
-// ?? displays the second value if the first is null or undefined  
+// ?? displays the second value if the first is null or undefined
 
-
-// let newUser = condition ? expressionIfTrue : expressionIfFalse; 
-
-
-
+// let newUser = condition ? expressionIfTrue : expressionIfFalse;
 
 // COnditionals (IF/ELSE)============
 let fName = "Taz";
 let age = 25;
 
-if (fName == age ) {
+if (fName == age) {
   console.log("Your name is correct");
 } else {
   console.log("Incorrect name");
@@ -53,20 +105,20 @@ if (fName == age ) {
 // IF/ELSE Shorthand
 
 // condition ? expressionIfTrue : expressionIfFalse;
-// const ternary = condition ? expressionTrue : expressionFalse; 
+// const ternary = condition ? expressionTrue : expressionFalse;
 
 const day = "Wednesday";
-const day1 = "Tuesday"
+const day1 = "Tuesday";
 
 const todayDate = day !== day1 ? `yes, it's ${day}!` : `No, it's not ${day1}!`;
 
 console.log(`${todayDate}`);
 
- const location = "Stevs place"
- const mallLocay = "the Mall"
-  const liveLocation = location !== location ? `yes I'm at ${location}` : `No hes at ${mallLocay}`;
-  console.log(liveLocation);
-
+const location = "Stevs place";
+const mallLocay = "the Mall";
+const liveLocation =
+  location !== location ? `yes I'm at ${location}` : `No hes at ${mallLocay}`;
+console.log(liveLocation);
 
 return;
 // booleans
@@ -81,7 +133,6 @@ if (isOldEnoughToDrink) {
 
 console.log(10 == 10);
 return;
-
 
 // FCC LAB - Debug Increment and Decrement Operator Errors in a Buggy App
 
@@ -109,25 +160,23 @@ console.log(`Health is currently ${health}`);
 let newHealth = health--;
 console.log(`Health is still ${newHealth}`);
 
-
-
 //  FCC prefix & postfix
 
- let x = 10;
+let x = 10;
 console.log(++x);
 
 let a = 13;
-let b = (++a);
+let b = ++a;
 console.log(b);
 
 let c = 24;
-let d = (c++);
+let d = c++;
 console.log(d);
 
 // ======== compound operator behaviour =========
 
 let num = 5;
-num = num + 2
+num = num + 2;
 // use instead
 let numm = 537;
 numm += 223;
@@ -138,11 +187,8 @@ total *= 3;
 console.log(total);
 
 let scores = 76;
-let newscores = scores -= 30;
+let newscores = (scores -= 30);
 console.log(newscores);
-
-
-
 
 // FCC lab - Type coersion
 const firstResult = 5 + 10;
@@ -163,10 +209,9 @@ console.log(`10 * 2 = ${fifthResult}`);
 const sixthResult = false + 22;
 console.log(`0 + 22 = ${sixthResult}`);
 
-
 return;
 
-// concatenation of strings 
+// concatenation of strings
 
 let firstName = "Timothy";
 let lastName = "Taz";
@@ -179,22 +224,27 @@ let person = {
   name: "Kube",
   age: 25,
   city: "Lagos",
-};  
-console.log(person.name + " is " + person.age + " years and was born in " + person.city + ".");
-
-
+};
+console.log(
+  person.name +
+    " is " +
+    person.age +
+    " years and was born in " +
+    person.city +
+    ".",
+);
 
 // ----using concat() to join variables -------
-let str1 = 'Hello';
-let str2 = ' The World'; 
-let str3 = ' is yours!!!!!'
+let str1 = "Hello";
+let str2 = " The World";
+let str3 = " is yours!!!!!";
 
-let result = str1.concat(str2); 
+let result = str1.concat(str2);
 console.log(result); // "Hello  The World is yours!"
 
 // ---- data types ------
 let newNote = 1324;
-let newNotes = ' is another 4 \ndigit number';
+let newNotes = " is another 4 \ndigit number";
 
 // let results = newNote + newNotes;
 
@@ -203,7 +253,7 @@ console.log(results); // 1324 is another 4 digit number
 
 let isAvailable = true;
 // isAvailable = "The value is " + isAvailable;
-console.log(isAvailable); 
+console.log(isAvailable);
 
 let greeting = "hello";
 console.log(greeting[1]); // "e"
@@ -211,27 +261,22 @@ console.log(greeting[1]); // "e"
 let newGreeting = greeting[0] + greeting[3];
 console.log(newGreeting); // "hl"
 
-
-let stat = "many people will cashout"
+let stat = "many people will cashout";
 let tellStat = "hello," + " " + stat;
 console.log(tellStat);
 
-let carDealer =  {
+let carDealer = {
   name: "Polanco",
-  occupation: "Car dealer"
-}
-let stati = "many people will cashout"
+  occupation: "Car dealer",
+};
+let stati = "many people will cashout";
 let tellStati = `hello, ${stati} and everyone will visit ${carDealer.name} who is a ${carDealer.occupation}.`;
 console.log(tellStati);
-
 
 //------------ using prompt -----------------
 
 //  <button id="prompt-btn">Show Prompt</button>
 // <p id="output"></p>
-
-
-
 
 // const btn = document.getElementById("prompt-btn");
 // const output = document.getElementById("output");
@@ -240,28 +285,24 @@ console.log(tellStati);
 //   output.textContent = "Hello, " + userName + "!";
 // });
 
-
 // ---- using string search and slice -----
 
 let phrase = "this is a phrase";
 let resulter = phrase.includes("is");
 console.log(resulter);
 
-//  slice 
+//  slice
 
 let resulterr = phrase.slice(-6);
-console.log(resulterr) 
+console.log(resulterr);
 
-
-let phrase1 = "   this is a white space phrase sentence    "
+let phrase1 = "   this is a white space phrase sentence    ";
 console.log(phrase1);
 let trimmedPhrase = phrase1.trim();
 console.log(trimmedPhrase);
 
-
 const organization = "freeCodeCamp";
-console.log(organization.indexOf("f"));  
-
+console.log(organization.indexOf("f"));
 
 // ======== NUMBERS ======
 // (+)
@@ -291,7 +332,5 @@ const result33 = num1 * num2 * num3;
 
 // concatinating strings & number
 
-
-const concat1 = '20' + 5;
+const concat1 = "20" + 5;
 console.log(concat1);
-
