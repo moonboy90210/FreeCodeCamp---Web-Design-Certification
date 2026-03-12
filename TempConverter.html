@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<!-- Bootstrap CSS v5.2.1 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+	<title>Temperature Converter</title>
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 40px;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+		}
+
+		.converter {
+			max-width: 450px;
+			padding: 30px;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+		}
+
+		.celsius {
+			text-align: end !important;
+		}
+
+		input {
+			width: 100%;
+			padding: 8px;
+			margin: 10px 0;
+		}
+
+		button {
+			padding: 8px 12px;
+			cursor: pointer;
+		}
+
+		.result {
+			margin-top: 15px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+
+	<main>
+		<div class="converter text-center">
+			<h2>Temperature Converter</h2>
+			<label for="tempValue">Enter Temperature:</label>
+			<input type="number" id="tempValue" placeholder="e.g. 18">
+
+			<div class="mb-3">
+				<label for="conversionType">Convert:</label>
+				<select id="conversionType">
+					<option value="CtoF">Celsius → Fahrenheit</option>
+					<option value="FtoC">Fahrenheit → Celsius</option>
+				</select>
+			</div>
+
+			<button class="btn btn-danger" onclick="convertTemp()">Convert</button>
+			<div class="result" id="result"></div>
+		</div>
+
+	</main>
+
+	<!-- Bootstrap JavaScript Libraries -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+	<script>
+		function convertCtoF(celsius) {
+			return celsius * (9 / 5) + 32;
+		}
+
+		function convertFtoC(fahrenheit) {
+			return (fahrenheit - 32) * (5 / 9);
+		}
+
+		function convertTemp() {
+			const value = document.getElementById("tempValue").value;
+			const type = document.getElementById("conversionType").value;
+
+			if (value === "") {
+				document.getElementById("result").textContent = "Please enter a value.";
+				return;
+			}
+			let result;
+			if (type === "CtoF") {
+				result = convertCtoF(Number(value));
+				document.getElementById("result").textContent =
+					`${value}°C = ${result.toFixed(1)}°F`;
+			} else {
+				result = convertFtoC(Number(value));
+				document.getElementById("result").textContent =
+					`${value}°F = ${result.toFixed(1)}°C`;
+			}
+		}
+	</script>
+</body>
+
+</html>
