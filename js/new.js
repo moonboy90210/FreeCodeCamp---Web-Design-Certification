@@ -1,3 +1,23 @@
+const day4 = "a good day";
+// let xp = (2 * 2) = 4;
+function addition(x,p) {
+  let add = x * p;
+return add;
+ 
+}
+
+let resultey = addition(9,6);
+let newResult = typeof(resultey) !== "number" ? `Today is ${day4}` : `Today will be ${day4}`;
+console.log(newResult);
+console.log(typeof(resultey));
+
+
+// addition(xp);
+
+// console.log(xp);
+// return xp ===
+return;
+
 // functions ============
 function greet(name) {
   console.log(`Hello, ${name}!`);
@@ -5,18 +25,9 @@ function greet(name) {
 greet("Somto");
 
 const sum = (width, height) => width * height;
-console.log(sum(3,21));
-
-
-const 
+console.log(sum(3, 21));
 
 return;
-
-
-
-
-
-
 
 const currentWeather = {
   avrgWeather: "Sunny",
@@ -27,11 +38,17 @@ const newWeather = {
   temp: 23,
 };
 
-if (newWeather.weather !== currentWeather.avrgWeather && newWeather.temp <= currentWeather.avrgTemp) {
-  console.log(`It's ${newWeather.temp}deg right now. The weather outside is ${newWeather.weather}`);
-
+if (
+  newWeather.weather !== currentWeather.avrgWeather &&
+  newWeather.temp <= currentWeather.avrgTemp
+) {
+  console.log(
+    `It's ${newWeather.temp}deg right now. The weather outside is ${newWeather.weather}`,
+  );
 } else {
-    console.log(`It's ${currentWeather.avrgTemp}deg right now. The weather outside is ${currentWeather.avrgWeather}`);
+  console.log(
+    `It's ${currentWeather.avrgTemp}deg right now. The weather outside is ${currentWeather.avrgWeather}`,
+  );
 }
 // switch caseX
 
