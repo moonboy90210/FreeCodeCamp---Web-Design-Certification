@@ -1,5 +1,33 @@
-let fruits = ["Banana", "Pineapple", "Watermelon", "Cherry", "Grapes", "Mango", "orange"];
-fruits[3] = "Strawberry";
+
+
+let str = "hel lolo ck1 920";
+let charArray = str.split(" ");
+let charArray2 = str.split("");
+let charArray3 = str.split("-");
+
+console.log(str); // hel lolo ck1 920
+console.log(charArray); // [ 'hel', 'lolo', 'ck1', '920' ]
+console.log(charArray2); // ['h', 'e', 'l', ' ', 'l', 'o', 'l', 'o', ' ', 'c', 'k', '1', ' ', '9', '2', '0']
+console.log(charArray3); //[ 'hel lolo ck1 920' ]
+
+let newStr = charArray.reverse();
+console.log(newStr); // [ '920', 'ck1', 'lolo', 'hel' ]
+
+let strReverse = newStr.join("");
+console.log(strReverse); // 920ck1lolohel
+
+let word = "hello";
+let chars = word.split("");
+chars.reverse();
+console.log(chars.join("-"));
+
+let str3 = "coding";
+let reversed = str3.split("").reverse().join("");
+console.log(reversed);
+
+// let fruits = ["Banana", "Pineapple", "Watermelon", "Cherry", "Grapes", "Mango", "orange"];
+// fruits[3] = "Strawberry";
+return; 
 
 console.log(fruits[6]);
 console.log(fruits[2]);
@@ -26,12 +54,13 @@ const lastFruit = fruits.pop();
 console.log(fruits);
 console.log(lastFruit);
 
+return;
+
 // shift() removes the first element from an array and returns that element
-let colors = ["red", "green", "blue"];
-let firstColor = colors.shift();
+// let colors = ["red", "green", "blue"];
+// let firstColor = colors.shift();
 console.log(colors); // ["green", "blue"]
 console.log(firstColor); // "red"
-
 
 // array destructuring 
 
@@ -44,11 +73,11 @@ console.log(second); // "banana"
 console.log(third);  // "orange"
 
 // accessing by index 
-const fruits = ["apple", "banana", "orange"];
+// const fruits = ["apple", "banana", "orange"];
 
-const first = fruits[0];
-const second = fruits[1];
-const third = fruits[2];
+// const first = fruits[0];
+// const second = fruits[1];
+// const third = fruits[2];
 
 console.log(first); // "apple"
 console.log(second); // "banana"
@@ -61,4 +90,11 @@ let [firstColor, , thirdColor] = colors;
 console.log(firstColor); // "red"
 console.log(thirdColor); // "blue"
 
+// the rest syntax, denoted by three dots (...). It allows you to capture the remaining elements of an array that haven’t been destructured into a new array. 
+// let fruits = ["apple", "banana", "orange", "mango", "kiwi"];
+// let [first, second, ...rest] = fruits;
+
+console.log(first);  // "apple"
+console.log(second); // "banana"
+console.log(rest);   // ["orange", "mango", "kiwi"]
 
