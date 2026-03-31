@@ -1,10 +1,10 @@
-let lunches = [""];
+let lunches = [];
 
 
 function addLunchToEnd(lunches, str) {
 	lunches.push(str);
-	const updatedArray = console.log(`${str} added to the end of the lunch menu.`);
-	return updatedArray;
+	console.log(`${str} added to the end of the lunch menu.`);
+	return lunches;
 }
 console.log(addLunchToEnd(lunches, "Tacos"));
 console.log(addLunchToEnd(lunches = ["Pizza", "Tacos"], "Burger"));
