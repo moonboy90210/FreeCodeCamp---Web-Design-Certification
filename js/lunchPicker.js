@@ -7,38 +7,37 @@ function addLunchToEnd(lunches, str) {
 	return lunches;
 }
 console.log(addLunchToEnd(lunches, "Tacos"));
-console.log(addLunchToEnd(lunches = ["Pizza", "Tacos"], "Burger"));
+console.log(addLunchToEnd(lunches, "Chicken Tender"));
+
+console.log(addLunchToEnd(lunches, "Burger"));
 console.log(lunches);
+
 
 function addLunchToStart(lunches, str) {
 	lunches.unshift(str);
-	const updatedArray = console.log(`${str} added to the start of the lunch menu.`);
-	return updatedArray;
+	console.log(`${str} added to the start of the lunch menu.`);
+	return lunches;
 }
-
 console.log(addLunchToStart(lunches, "Sushi"));
-console.log(addLunchToStart(lunches = ["Burger", "Sushi"], "Pizza") );
+console.log(addLunchToStart(lunches = ['Sushi', 'Tacos', 'Chicken Tender', 'Burger'], "Pizza") );
 console.log(lunches);
+
 
 function removeLastLunch(lunches) {
 	const pop = lunches.pop();
-	const updatedArray = pop !== "" ? console.log(`${str} removed from the end of the lunch menu.`) : console.log("No lunches to remove");
-	return updatedArray;
+	pop ? console.log(`${pop} removed from the end of the lunch menu.`) : console.log("No lunches to remove");
+	return lunches;
 }
-
-console.log(removeLastLunch());
-console.log(removeLastLunch());
+console.log(removeLastLunch(lunches));
 console.log(lunches);
 
-function removeFirstLunch(lunches) {
-	// let str = ;
-	const pop = lunches.shift();
-	const updatedArray = pop !== "" ? console.log(`${str} removed from the start of the lunch menu.`) : console.log("No lunches to remove.");
-	return updatedArray;
-}
 
-console.log(removeLastLunch());
-console.log(removeLastLunch());
+function removeFirstLunch(lunches) {
+	const popped = lunches.shift();
+	popped ? console.log(`${popped} removed from the start of the lunch menu.`) : console.log("No lunches to remove.");
+	return lunches;
+}
+console.log(removeFirstLunch(lunches));
 console.log(lunches);
 
 
