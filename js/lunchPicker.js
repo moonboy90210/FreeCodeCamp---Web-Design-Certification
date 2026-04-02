@@ -25,7 +25,7 @@ console.log(lunches);
 
 function removeLastLunch(lunches) {
 	const pop = lunches.pop();
-	pop ? console.log(`${pop} removed from the end of the lunch menu.`) : console.log("No lunches to remove");
+	pop ? console.log(`${pop} removed from the end of the lunch menu.`) : console.log("No lunches to remove.");
 	return lunches;
 }
 console.log(removeLastLunch(lunches));
@@ -50,11 +50,13 @@ function getRandomLunch(lunches) {
 	const randomNum = Math.floor(Math.random() * lunches.length);
 	const randomLunch = lunches[randomNum];
 	console.log(`Randomly selected lunch: ${randomLunch}`);
+	return randomLunch;
 }
-
 console.log(getRandomLunch(lunches));
 
+
 function showLunchMenu(lunches) {
-	const menu = lunches.length > 0 ? console.log(`Menu items:${lunches}`) : console.log("The menu is empty");
-return menu;
+	lunches.length > 0 ? console.log(`Menu items: ${lunches.join(", ")}`) : console.log("The menu is empty.");
+return lunches;
 }
+console.log(showLunchMenu(lunches));
