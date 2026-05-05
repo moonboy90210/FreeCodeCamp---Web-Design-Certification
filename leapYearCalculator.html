@@ -55,7 +55,7 @@
 			<div class="result" id="result"></div>
 		</div>
 
-	</main>
+	</main> 
 	<footer>
 		<!-- place footer here -->
 	</footer>
@@ -79,7 +79,6 @@
 				return `${year} is not a leap year.`;
 			}
 		}
-
 		function checkLeapYear() {
 			const yearInput = document.getElementById("year").value;
 			if (yearInput === "") {
@@ -88,9 +87,7 @@
 			}
 			const result = isLeapYear(Number(yearInput));
 			document.getElementById("result").textContent = result;
-		}
-
-		
+		}		
 	</script>
 </body>
 

@@ -18,8 +18,8 @@ console.log(strReverse); // 920ck1lolohel
 
 let word = "hello";
 let chars = word.split("");
-chars.reverse();
-console.log(chars.join("-"));
+console.log(chars.reverse());
+console.log(chars.join("-")); // o-l-l-e-h
 
 let str3 = "coding";
 let reversed = str3.split("").reverse().join("");
