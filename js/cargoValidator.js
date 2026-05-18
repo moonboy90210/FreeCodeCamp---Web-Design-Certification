@@ -1,26 +1,27 @@
-
-  let cargo = {
-	containerId: 68,
-	destination: "Salinas",
-	weight: 101,
-	unit: "lb",
-	hazmat: true
-}
-
+let manifest = {
+  containerId: 350,
+  destination: "Salinas",
+  weight: 101,
+  unit: "lb",
+  hazmat: true,
+};
 
 const normalizeUnits = (manifest) => {
-	const lb_to_kg = 0.45;
+  const lb_to_kg = 0.45;
   return {
     ...manifest,
-    weight: manifest.unit === "lb" ? +(manifest.weight * lb_to_kg).toFixed(2) : manifest.weight,
-    unit: manifest.unit === "lb" ? "kg" : manifest.unit
+    weight:
+      manifest.unit === "lb"
+        ? +(manifest.weight * lb_to_kg).toFixed(2)
+        : manifest.weight,
+    unit: manifest.unit === "lb" ? "kg" : manifest.unit,
   };
-}
+};
 
 function validateManifest(manifest) {
   const errors = {};
-// return {...manifest,};
-  // Check if manifest is missing entirely
+
+  // Handle manifest itself being null/undefined
   if (manifest === null) {
     return { manifest: "Missing" };
   }
@@ -28,60 +29,82 @@ function validateManifest(manifest) {
     return { manifest: "Invalid" };
   }
 
-  // Validate required properties
-  if (manifest.containerId == null) {
+  // Check containerId
+  if (manifest.containerId === undefined) {
     errors.containerId = "Missing";
-  } else if (typeof manifest.containerId !== "number") {
+  } else if (typeof manifest.containerId !== "number" || !Number.isInteger(manifest.containerId) || manifest.containerId <= 0) {
     errors.containerId = "Invalid";
   }
 
-  if (!manifest.destination) {
+  // Check destination
+  if (manifest.destination === undefined || manifest.destination === "") {
     errors.destination = "Missing";
   } else if (typeof manifest.destination !== "string") {
     errors.destination = "Invalid";
+  } else if (manifest.destination.trim().length === 0) {
+     errors.destination = "Invalid";
   }
 
-  if (manifest.weight == null) {
+  // Check weight
+  if (manifest.weight === undefined) {
     errors.weight = "Missing";
   } else if (typeof manifest.weight !== "number" || manifest.weight <= 0) {
     errors.weight = "Invalid";
+  } else if (isNaN(manifest.weight)) {
+    errors.weight = "Invalid";
   }
 
-  if (!manifest.unit) {
+  // Check unit
+  if (manifest.unit === undefined) {
     errors.unit = "Missing";
-  } else if (!["lb", "kg"].includes(manifest.unit)) {
+  } else if (manifest.unit !== "lb" && manifest.unit !== "kg") {
     errors.unit = "Invalid";
   }
 
-  if (manifest.hazmat == null) {
+  // Check hazmat
+  if (manifest.hazmat === undefined) {
     errors.hazmat = "Missing";
   } else if (typeof manifest.hazmat !== "boolean") {
     errors.hazmat = "Invalid";
   }
 
-  // Return {} if no errors, otherwise return errors object
+  // Return {} if valid, otherwise return errors object
   return Object.keys(errors).length === 0 ? {} : errors;
+  
 }
 
 
+console.log(validateManifest(manifest));
+
+// Case: only destination is whitespace
+console.log(validateManifest({ destination: "  " }));
+// { containerId: "Missing", destination: "Invalid", weight: "Missing", unit: "Missing", hazmat: "Missing" }
+
+// Case: containerId is decimal
+console.log(validateManifest({ containerId: 3.5 }));
+// { containerId: "Invalid", destination: "Missing", weight: "Missing", unit: "Missing", hazmat: "Missing" }
+
+// Case: fully valid manifest
+console.log(validateManifest({
+  containerId: 68,
+  destination: "Salinas",
+  weight: 101,
+  unit: "lb",
+  hazmat: true;
+}));
 
 
+// let processManifest = (manifest) => {
+//   if (manifest.hazmat === true) {
+//     return `Validation success: ${containerId}
+// 		Total weight: ${normalizeUnits(manifest)} kg`;
+//   } else {
+//     return `Validation error: ${containerId} 
+// 		${validateManifest(manifest)}`;
+//   }
+// };
 
-
-console.log(validateManifest(cargo.unit));
-
- let processManifest = (manifest) => {
-	if (manifest.hazmat === true) {
-
-		return `Validation success: ${containerId}
-		Total weight: ${normalizeUnits(manifest)} kg`;
-	} else {
-		return `Validation error: ${containerId} 
-		${validateManifest(manifest)}`; 
-	}
- }
-
- console.log(validateManifest({}));
- console.log(validateManifest({containerId: -2}));
- console.log(validateManifest({destination: ""}));
- console.log(validateManifest({weight: NaN}));
+// console.log(validateManifest({}));
+// console.log(validateManifest({ containerId: -2 }));
+// console.log(validateManifest({ destination: "" }));
+// console.log(validateManifest({ weight: NaN }));
