@@ -1,7 +1,7 @@
 let manifest = {
-  containerId: 350,
-  destination: "Salinas",
-  weight: 101,
+  containerId: 30,
+  destination: "Cancun",
+  weight: 200,
   unit: "lb",
   hazmat: true,
 };
@@ -32,7 +32,11 @@ function validateManifest(manifest) {
   // Check containerId
   if (manifest.containerId === undefined) {
     errors.containerId = "Missing";
-  } else if (typeof manifest.containerId !== "number" || !Number.isInteger(manifest.containerId) || manifest.containerId <= 0) {
+  } else if (
+    typeof manifest.containerId !== "number" ||
+    !Number.isInteger(manifest.containerId) ||
+    manifest.containerId <= 0
+  ) {
     errors.containerId = "Invalid";
   }
 
@@ -42,7 +46,7 @@ function validateManifest(manifest) {
   } else if (typeof manifest.destination !== "string") {
     errors.destination = "Invalid";
   } else if (manifest.destination.trim().length === 0) {
-     errors.destination = "Invalid";
+    errors.destination = "Invalid";
   }
 
   // Check weight
@@ -70,9 +74,7 @@ function validateManifest(manifest) {
 
   // Return {} if valid, otherwise return errors object
   return Object.keys(errors).length === 0 ? {} : errors;
-  
 }
-
 
 console.log(validateManifest(manifest));
 
@@ -85,26 +87,31 @@ console.log(validateManifest({ containerId: 3.5 }));
 // { containerId: "Invalid", destination: "Missing", weight: "Missing", unit: "Missing", hazmat: "Missing" }
 
 // Case: fully valid manifest
-console.log(validateManifest({
-  containerId: 68,
-  destination: "Salinas",
-  weight: 101,
-  unit: "lb",
-  hazmat: true;
-}));
+console.log(
+  validateManifest({
+    containerId: 68,
+    destination: "Salinas",
+    weight: 101,
+    unit: "lb",
+    hazmat: true,
+  }),
+);
 
+const processManifest = (manifest) => {
+  // run validation first
+  const validationResult = validateManifest(manifest);
 
-// let processManifest = (manifest) => {
-//   if (manifest.hazmat === true) {
-//     return `Validation success: ${containerId}
-// 		Total weight: ${normalizeUnits(manifest)} kg`;
-//   } else {
-//     return `Validation error: ${containerId} 
-// 		${validateManifest(manifest)}`;
-//   }
-// };
+  if (Object.keys(validationResult).length === 0) {
+    //if manifest is valid
+    console.log(`Validation success: ${manifest.containerId}`);
+    // normalize units to kg
+    const normalized = normalizeUnits(manifest);
+    console.log(`Total weight: ${normalized.weight} kg`);
+  } else {
+    // ❌ Invalid manifest
+    console.log(`Validation error: ${manifest.containerId}`);
+    console.log(validationResult);
+  }
+};
 
-// console.log(validateManifest({}));
-// console.log(validateManifest({ containerId: -2 }));
-// console.log(validateManifest({ destination: "" }));
-// console.log(validateManifest({ weight: NaN }));
+console.log(processManifest(manifest));
