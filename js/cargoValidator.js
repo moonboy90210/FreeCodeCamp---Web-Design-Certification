@@ -1,7 +1,7 @@
 let manifest = {
   containerId: 30,
   destination: "Cancun",
-  weight: 200,
+  weight: 250,
   unit: "lb",
   hazmat: true,
 };
@@ -115,3 +115,20 @@ const processManifest = (manifest) => {
 };
 
 console.log(processManifest(manifest));
+// Valid manifest
+processManifest({
+  containerId: 68,
+  destination: "Salinas",
+  weight: 101,
+  unit: "lb",
+  hazmat: true
+});
+// Logs:
+// Validation success: 68
+// Total weight: 45.45 kg
+
+// Invalid manifest
+processManifest({ destination: " cancun" });
+// Logs:
+// Validation error: undefined
+// { containerId: "Missing", destination: "Invalid", weight: "Missing", unit: "Missing", hazmat: "Missing" }
