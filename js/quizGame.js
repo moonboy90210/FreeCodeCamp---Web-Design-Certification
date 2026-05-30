@@ -1,17 +1,17 @@
 const questions = [
 	{
 	category: "math",
-	question: "what is 2 + 2",
-	choices: ["5", " 4", "8"],
-	answer: "4"
+	question: "what is 2 + 2?",
+	choices: ["5", "4", "8"],
+	answer: "4" 
 },
   {
     category: "Math",
-    question: "What is 12 × 8?",
+    question: "What is 12 * 8?",
     choices: ["96", "108", "100"],
     answer: "96"
   },
-  {
+  { 
     category: "Sports",
     question: "How many players are on a soccer team on the field?",
     choices: ["9", "11", "12"],
@@ -40,19 +40,27 @@ const questions = [
 
 
 
-const getRandomQuestion = (questions = [question]) => {
-
+const getRandomQuestion = (questions) => {
+    return questions[Math.floor(Math.random() * questions.length)]
 };
 
-const getRandomComputerChoice = (questions.choices) => {
+const getRandomComputerChoice = (choices) => {
+   // Generate a random index between 0 and choices.length - 1
+   const randomIndex = Math.floor((Math.random) * choices.length)
+
+	return choices[randomIndex];
 
 }
 
-const getResults = (questions.question, choice) {
-	if (answer == choices) {
+function getResults(question, choice) {
+  if (choice === question.answer) {
 		return `The computer's choice is correct!`
 	} else {
 		return `The computer's choice is wrong. The correct answer is: ${answer}`
 	}
-}
+};
+
+
+console.log(questions[0].question);
+console.log(questions[0].choices);
 
