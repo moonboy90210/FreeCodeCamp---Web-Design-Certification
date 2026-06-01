@@ -56,11 +56,13 @@ function getResults(question, choice) {
   if (choice === question.answer) {
 		return `The computer's choice is correct!`
 	} else {
-		return `The computer's choice is wrong. The correct answer is: ${answer}`
+		return `The computer's choice is wrong. The correct answer is: ${question.answer}`
 	}
 };
 
 
 console.log(questions[0].question);
 console.log(questions[0].choices);
+console.log(questions[0].answer);
+
 
