@@ -38,5 +38,6 @@ function updateRecords(records, id, prop, value) {
 
 
 console.log(updateRecords(recordCollection, 5439, "artist", "ABBA"))
-console.log(recordCollection[5439]);
-console.log(updateRecords(recordCollection, 2548, "tracks", ""))
+console.log(updateRecords(recordCollection, 1245, "albumTitle", "Riptide"));
+
+console.log(recordCollection[1245].artist);
