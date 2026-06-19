@@ -24,20 +24,26 @@ function updateRecords(records, id, prop, value) {
 		delete records[id][prop];
 	} 
 	else if (prop !== "tracks") {
-		return records[id][prop] = value;
+		records[id][prop] = value;
 	}
 	else if (prop === "tracks" && !records[id].hasOwnProperty("tracks")) {
-		return records[id][prop] = [value];
+		records[id][prop] = [value];
 	}
 	else if (prop === "tracks" && value !=="" ) {
-	records[id][prop].push(value);
+	  records[id][prop].push(value);
 	}
   return records;
 }
 
 
 
-console.log(updateRecords(recordCollection, 5439, "artist", "ABBA"))
+console.log(updateRecords(recordCollection, 5439, "artist", "ABBA")) 
 console.log(updateRecords(recordCollection, 1245, "albumTitle", "Riptide"));
+console.log(updateRecords(recordCollection, 1245, "tracks", "Addicted to Love"));
 
-console.log(recordCollection[1245].artist);
+
+console.log(recordCollection[5439].artist);
+
+// console.log(recordCollection);
+
+
