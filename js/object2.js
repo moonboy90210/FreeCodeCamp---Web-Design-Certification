@@ -1,7 +1,10 @@
 const user1 = {
+	"pages": 932,
   name: {
     fName: "Timothy",
     lName: "Taz",
+	"surname": "Taz",
+	
   },
    sayHello: function() {
     return "Hello, my name is " + this.name;
@@ -46,4 +49,4 @@ if (user1.hasOwnProperty("darkMode")) {
 } else {
 	console.log(`darkMode does not exist`);
 }
- console.log(user1.contact.phone.work); // 070-820-6115
+ console.log(user1.name.surname); 
