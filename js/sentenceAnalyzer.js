@@ -17,7 +17,7 @@ console.log(`Vowel Count: ${vowelCount}`);
 function getConsonantCount(sentence) {
   let count = 0;
   let vowels = "aeiouAEIOU";
-//   const consonant = !vowels;
+  //   const consonant = !vowels;
 
   for (let char of sentence) {
     if (/[a-z]/i.test(char)) {
@@ -37,23 +37,33 @@ console.log(`Consonant Count: ${consoCount}`);
 
 // console.log(getConsonantCount(conso1));
 
-
 function getPunctuationCount(sentence) {
-	let count= 0
-	for (let char of sentence){
-		if (char !== " " && !/[a-z]/i.test(char)) {
-			count ++;
-		}
-	}
-	return count
+  let count = 0;
+  for (let char of sentence) {
+    if (char !== " " && !/[a-z]/i.test(char)) {
+      count++;
+    }
+  }
+  return count;
 }
 console.log(getPunctuationCount("What????!"));
-
 
 const punctuationCount = getPunctuationCount("WHAT?!?!?!?!?");
 
 console.log(`Punctuation Count: ${punctuationCount}`);
 
 function getWordCount(sentence) {
-	
+  // Trim leading/trailing spaces and split by one or more spaces
+  const words = sentence.trim().split(/\s+/);
+  if (sentence.trim() === "") {
+    return 0;
+  } 
+  return words.length;
 }
+
+console.log(getWordCount("    "));
+console.log(getWordCount("I love freeCodeCamp"));
+
+const wordCount = getWordCount("I love freeCodeCamp");
+
+console.log(`Word Count: ${wordCount}`);
