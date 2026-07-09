@@ -27,12 +27,12 @@ const config3 = {
 
 const config4 = {
   fault: false,
-  phases: [],
+  phases: [], 
 };
 
-function runSequence(config, cycles) {
-  if (config.phases.length === 0) {
-    console.log(`No phases found`);
+function runSequence(config, cycles) { 
+  if (config.phases.length === 0) { 
+    console.log(`No phases found`); 
     return;
   }
   if (config.fault === true) {
@@ -44,16 +44,28 @@ function runSequence(config, cycles) {
     for (let phase of config.phases) {
       if (phase.duration <= 0) {
         console.log(`Invalid phase detected`);
-        return;
-      }
-     console.log(`Switching to ${phase.color} for ${phase.duration}`);
+      } else {
+        console.log(`Switching to ${phase.color} for ${phase.duration} s`);
+    }
 
     }
   }
 }
 
-console.log(runSequence(config4, 2));
 
-// function generateTimeline(config, cycles) {
+function generateTimeline(config, cycles) {
+  const timeline = [];
+  let passed = 0;
 
-// }
+    for (let c = 0; c < cycles; c++) {
+      for (let phase of config.phases) {
+        passed += phase.duration;  // add duration to running total
+        timeline.push(passed);   // record cumulative time
+      }
+    }
+    return timeline;
+  }
+
+console.log(runSequence(config2, 1)); 
+
+console.log(generateTimeline(config1, 1)); 
