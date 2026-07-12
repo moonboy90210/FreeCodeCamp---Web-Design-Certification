@@ -7,10 +7,15 @@ const 	firstAstronaut = { id: 1,
 }
 
 function addCrewMember(crew, astronaut) {
- for (let id in crew) {
- if (crew === firstAstronaut.id) {
-  console.log(`Duplicate ID: ${firstAstronaut.id}`)
+ for (let astronaut of crew) {
+ if (astronaut.id === firstAstronaut.id) {
+  console.log(`Duplicate ID: ${firstAstronaut.id}`);
   return;
  }
 }
+ crew.push(astronaut);
+console.log(`Added ${astronaut.name} as ${astronaut.role}`);
+
 }
+
+console.log(addCrewMember(squad, firstAstronaut));
