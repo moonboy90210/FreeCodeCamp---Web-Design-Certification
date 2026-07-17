@@ -38,7 +38,13 @@ function swapCrewMembers(crew, fromIndex, toIndex) {
 
 const updatedCrew = crew.slice();
 updatedCrew[fromIndex] = updatedCrew.splice(toIndex, 1, updatedCrew[fromIndex])[0];
+
+for (let member of updatedCrew) {
+  console.log(member.name);
+}
 return updatedCrew;
 }
 
-console.log(swapCrewMembers(remainingCrew, 1, 4));
+let updatedSquad = swapCrewMembers(squad, 2, 5);
+
+console.log(updatedSquad);
