@@ -39,12 +39,39 @@ function swapCrewMembers(crew, fromIndex, toIndex) {
 const updatedCrew = crew.slice();
 updatedCrew[fromIndex] = updatedCrew.splice(toIndex, 1, updatedCrew[fromIndex])[0];
 
-for (let member of updatedCrew) {
-  console.log(member.name);
-}
 return updatedCrew;
 }
 
 let updatedSquad = swapCrewMembers(squad, 2, 5);
 
 console.log(updatedSquad);
+
+function sortByPriorityDescending(crew) {
+  for (let i = 0; i < crew.length; i++) {
+    for (let j = 0; j <crew.length - 1 - i; j++) {
+if (crew[j].priority < crew[j + 1].priority) {
+    const temp = crew[j];
+    crew[j] = crew[j + 1];
+    crew[j + 1] = temp
+}
+    }
+  }
+}
+
+function getEVAReadyCrew(crew) {
+  const eligible = [];
+  for (let astronaut of crew) {
+    if (astronaut.isEVAEligible === true) {
+      eligible.push(astronaut)
+    }
+  }
+ sortByPriorityDescending(eligible);
+    return eligible; 
+}
+
+ const EVAReadySquad = getEVAReadyCrew(updatedSquad);
+ for (let member of EVAReadySquad) {
+  console.log(member.name);
+ }
+
+
