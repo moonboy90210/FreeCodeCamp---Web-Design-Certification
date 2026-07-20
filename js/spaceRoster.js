@@ -94,5 +94,25 @@ function getEVAReadyCrew(crew) {
     console.log(EVAChunks[i][j].name);
   }
  }
+ // same loop using for...of
+ let chunkNumber = 1;
+for (let chunk of EVAChunks) {
+  console.log(`Chunk ${chunkNumber}:`);
+  for (let member of chunk) {
+    console.log(member.name);
+  }
+  chunkNumber++;
+}
+
+function printCrewSummary(crew) {
+  const sorted = crew.slice();
+  sortByPriorityDescending(sorted);
 
 
+  for (let astronaut of sorted) {
+   console.log(astronaut.name);
+  }
+
+}
+
+printCrewSummary(updatedSquad);
