@@ -22,13 +22,36 @@ function parseCard(rawString) {
 const newP = {
 	title: trimmedParts[0] || "Unknown",
 	author: trimmedParts[1] || "Unknown",
-	year: trimmedParts[2],
-  location: trimmedParts[3] || "Unknown",
+	year: trimmedParts[2] ? parseInt(trimmedParts[2]) : "Unknown",
+ 	location: trimmedParts[3] || "Unknown",
 }
 
   return newP;
 }
 
-const cardResult = parseCard(rawCatalogCards[7]);
+function parseCatalog(rawCards) {
+	const catalog = [];
 
-console.log(cardResult);
+	for (let cards of rawCards) {
+	const raw =	parseCard(cards);
+	catalog.push(raw);
+	}
+
+	return catalog;
+}
+
+function findByAuthor(catalog, author) {
+const searchTerm = author.toLowerCase();
+const results = [];
+for (let item of catalog) {
+	if (item.toLowerCase().includes(searchTerm)) {
+		results.push(item);
+	}
+}
+	return results;
+
+}
+console.log(findByAuthor(rawCatalogCards, "king"));
+
+
+
