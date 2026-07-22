@@ -28,7 +28,7 @@ const newP = {
 
   return newP;
 }
-const catalogParse = rawCatalogCards.map(parseCard);
+// const catalogParse = rawCatalogCards.map(parseCard);
 // console.log(catalog);
 
 function parseCatalog(rawCards) {
@@ -44,19 +44,24 @@ function parseCatalog(rawCards) {
 
 const catalog = parseCatalog(rawCatalogCards);
 
-function findByAuthor(catalog, author) {
+function findByAuthor(catalogg, author) {
 const searchTerm = author.toLowerCase();
 const results = [];
-for (let item of catalog) {
-	if (item.toLowerCase().includes(searchTerm)) {
+for (let item of catalogg) {
+	if (item.author.toLowerCase().includes(searchTerm)) {
 		results.push(item);
 	}
 }
 	return results; 
 
 }
+const kingBooks = findByAuthor(catalog, "king");
+console.log(kingBooks);
+console.log(kingBooks.length);
+for (let book of kingBooks) {
+	console.log(`${book.title} (${book.year})`);
+}
 
-console.log(catalog);
 
 
 
