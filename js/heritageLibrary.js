@@ -28,6 +28,8 @@ const newP = {
 
   return newP;
 }
+const catalogParse = rawCatalogCards.map(parseCard);
+// console.log(catalog);
 
 function parseCatalog(rawCards) {
 	const catalog = [];
@@ -40,6 +42,8 @@ function parseCatalog(rawCards) {
 	return catalog;
 }
 
+const catalog = parseCatalog(rawCatalogCards);
+
 function findByAuthor(catalog, author) {
 const searchTerm = author.toLowerCase();
 const results = [];
@@ -48,10 +52,13 @@ for (let item of catalog) {
 		results.push(item);
 	}
 }
-	return results;
+	return results; 
 
 }
-console.log(findByAuthor(rawCatalogCards, "king"));
+
+console.log(catalog);
+
+
 
 
 
