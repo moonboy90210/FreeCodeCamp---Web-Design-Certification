@@ -4,7 +4,7 @@ const rawCatalogCards = [
   "The Stand | King, Stephen | 1978 | Shelf K2",
   "It | King, Stephen | 1986 | Shelf K3",
   "Misery | King, Stephen | 1987 | Shelf K4",
-   "Ready Player One | Cline, Ernest | 2011 | Shelf C7",
+  "Ready Player One | Cline, Ernest | 2011 | Shelf C7",
   "The Dark Tower: The Gunslinger | King, Stephen | 1982 | Shelf K5",
   // edge cases: missing data
   "Unknown Title |  | 1975 | Shelf X1",
@@ -19,12 +19,12 @@ function parseCard(rawString) {
     trimmedParts.push(parts[i].trim());
   }
 
-const newP = {
-	title: trimmedParts[0] || "Unknown",
-	author: trimmedParts[1] || "Unknown",
-	year: trimmedParts[2] ? parseInt(trimmedParts[2]) : "Unknown",
- 	location: trimmedParts[3] || "Unknown",
-}
+  const newP = {
+    title: trimmedParts[0] || "Unknown",
+    author: trimmedParts[1] || "Unknown",
+    year: trimmedParts[2] ? parseInt(trimmedParts[2]) : "Unknown",
+    location: trimmedParts[3] || "Unknown",
+  };
 
   return newP;
 }
@@ -32,38 +32,55 @@ const newP = {
 // console.log(catalog);
 
 function parseCatalog(rawCards) {
-	const catalog = [];
+  const catalog = [];
 
-	for (let cards of rawCards) {
-	const raw =	parseCard(cards);
-	catalog.push(raw);
-	}
+  for (let cards of rawCards) {
+    const raw = parseCard(cards);
+    catalog.push(raw);
+  }
 
-	return catalog;
+  return catalog;
 }
 
 const catalog = parseCatalog(rawCatalogCards);
 
 function findByAuthor(catalogg, author) {
-const searchTerm = author.toLowerCase();
-const results = [];
-for (let item of catalogg) {
-	if (item.author.toLowerCase().includes(searchTerm)) {
-		results.push(item);
-	}
-}
-	return results; 
-
+  const searchTerm = author.toLowerCase();
+  const results = [];
+  for (let item of catalogg) {
+    if (item.author.toLowerCase().includes(searchTerm)) {
+      results.push(item);
+    }
+  }
+  return results;
 }
 const kingBooks = findByAuthor(catalog, "king");
 console.log(kingBooks);
 console.log(kingBooks.length);
 for (let book of kingBooks) {
-	console.log(`${book.title} (${book.year})`);
+  console.log(`${book.title} (${book.year})`);
 }
 
+function groupByDecade(catalog) {
+  const grouped = {};
+  for (let i = 0; i < catalog.length; i++) {
+    const book = catalog[i];
+    if (book.year === "Unknown") {
+    	if (!grouped["Unknown"]) {
+     	grouped["Unknown"] = [];
+    }
+	 grouped["Unknown"].push(book);
+    continue;
+	}
+   	const decade = Math.floor(book.year / 10) * 10;
+	const decadeKey = `${decade}s`;
+	if (!grouped[decadeKey]) {
+		grouped[decadeKey] = [];
+		grouped[decadeKey].push(book);
+	}
 
-
-
-
-
+  }
+  return grouped;
+}
+const byDecade = groupByDecade(catalog);
+console.log(byDecade);
