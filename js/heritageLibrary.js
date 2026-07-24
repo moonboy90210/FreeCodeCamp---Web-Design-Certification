@@ -1,9 +1,18 @@
 const rawCatalogCards = [
-  "From a Buick 8 | King Stephen | 2002 | Shelf K7",
+  "From a Buick 8 | King, Stephen | 2002 | Shelf K7",
   "The Shining | King, Stephen | 1977 | Shelf K1",
   "The Stand | King, Stephen | 1978 | Shelf K2",
   "It | King, Stephen | 1986 | Shelf K3",
   "Misery | King, Stephen | 1987 | Shelf K4",
+  "Do Androids Dream of Electric Sheep? | Dick, Philip K. | 1968 | Shelf D5",
+  "I, Robot | Asimov, Isaac | 1950 | Shelf A8",
+  "Foundation | Asimov, Isaac | 1951 | Shelf A9",
+  "Dune | Herbert, Frank | 1965 | Shelf H3",
+  "Neuromancer | Gibson, William | 1984 | Shelf G8",
+  "Snow Crash | Stephenson, Neal | 1992 | Shelf S6",
+  "The Martian | Weir, Andy | 2011 | Shelf W5",
+  "Ender's Game | Card, Orson Scott | 1985 | Shelf C2",
+  "The Hitchhiker's Guide to the Galaxy | Adams, Douglas | 1979 | Shelf A1",
   "Ready Player One | Cline, Ernest | 2011 | Shelf C7",
   "The Dark Tower: The Gunslinger | King, Stephen | 1982 | Shelf K5",
   // edge cases: missing data
@@ -11,7 +20,6 @@ const rawCatalogCards = [
   "Mysterious Manuscript | Unknown Author |  | Shelf Z9",
   "Ancient Scroll | Anonymous | 850 | ",
 ];
-
 function parseCard(rawString) {
   const parts = rawString.split("|");
   const trimmedParts = [];
@@ -55,8 +63,7 @@ function findByAuthor(catalogg, author) {
   return results;
 }
 const kingBooks = findByAuthor(catalog, "king");
-console.log(kingBooks);
-console.log(kingBooks.length);
+
 for (let book of kingBooks) {
   console.log(`${book.title} (${book.year})`);
 }
@@ -83,4 +90,30 @@ function groupByDecade(catalog) {
   return grouped;
 }
 const byDecade = groupByDecade(catalog);
-console.log(byDecade);
+
+
+function renderEntry(entry) {
+	const title = entry.title || "Unknown";
+	const author = entry.author || "Unknown";
+	const year = entry.year || "Unknown";
+	const location = entry.location || "Unknown";
+
+	return `
+		${"-".repeat(25)}
+		Title: ${title}
+		Author: ${author}
+		Year: ${year}
+		Location: ${location}
+	 	${"-".repeat(25)}`
+ } 
+
+ console.log(renderEntry(catalog[0]));
+
+
+function validateEntry(entry) {
+	let isValid = true;
+	if (title === "Unknown" || " ") {
+		isValid = false;
+	}
+	return isValid;
+}
