@@ -112,8 +112,29 @@ function renderEntry(entry) {
 
 function validateEntry(entry) {
 	let isValid = true;
-	if (title === "Unknown" || " ") {
-		isValid = false;
+
+	const requiredFields = ["title", "author", "year", "location"];
+
+  for (let field of requiredFields) {
+    // Check if property exists
+    if (!(field in entry)) {
+      return false;
+    }
+
+    const value = entry[field];
+
+	// ROBUST VALIDATION
+	if(
+    !("title" in entry) || 
+    !value || 
+    value === "Unknown" || 
+    (typeof value === "string" && value.trim() === "")
+  )
+   {
+	 	isValid = false;	
 	}
+}
 	return isValid;
 }
+
+console.log(validateEntry({}));
