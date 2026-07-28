@@ -107,7 +107,7 @@ function renderEntry(entry) {
 	 	${"-".repeat(25)}`
  } 
 
- console.log(renderEntry(catalog[0]));
+//  console.log(renderEntry(catalog[0]));
 
 
 function validateEntry(entry) {
@@ -137,4 +137,29 @@ function validateEntry(entry) {
 	return isValid;
 }
 
-console.log(validateEntry({}));
+
+function exportToJSON(catalog) {
+  return JSON.stringify(catalog, null, 2);
+
+}
+
+
+function exportToCSV(catalog) {
+  const header = "Title, Author, Year, Location";
+  const rows = [];
+  for (let enter of catalog) {
+    const entry = enter;
+    rows.push(`"${entry.title}","${entry.author}","${entry.year}","${entry.location}"`);
+  }
+
+
+  
+  for (let i = 0; i < catalog.length; i++) {
+    const entry = catalog[i];
+    const row = "";
+    rows.push("Title, Author, Year, Location");
+
+
+  }
+
+}
