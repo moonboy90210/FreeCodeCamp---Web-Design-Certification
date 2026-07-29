@@ -153,13 +153,11 @@ function exportToCSV(catalog) {
   }
 
 
-  
-  for (let i = 0; i < catalog.length; i++) {
-    const entry = catalog[i];
-    const row = "";
-    rows.push("Title, Author, Year, Location");
-
-
-  }
-
+let csv = header;
+for (let i = 0; i < rows.length; i++) {
+  csv = csv + "\n" + rows[i];
 }
+return csv;
+}
+
+console.log(exportToCSV(catalog));
