@@ -161,3 +161,24 @@ return csv;
 }
 
 console.log(exportToCSV(catalog));
+
+console.log(catalog.length);
+
+console.log(Object.keys(byDecade).length3);
+
+let oldestYear = Infinity;
+let newestYear =  0;
+
+for (let i = 0; i < catalog.length; i++) {
+  if (!catalog.year === "Unknown") {
+    if (catalog.year < oldestYear ) {
+ console.log(oldestYear);
+    } else {
+      console.log(newestYear);
+    }
+
+  }
+  
+}
+console.log(oldestYear);
+console.log(newestYear);
