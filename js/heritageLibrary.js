@@ -170,15 +170,18 @@ let oldestYear = Infinity;
 let newestYear =  0;
 
 for (let i = 0; i < catalog.length; i++) {
-  if (!catalog.year === "Unknown") {
-    if (catalog.year < oldestYear ) {
- console.log(oldestYear);
-    } else {
-      console.log(newestYear);
-    }
+  let year = catalog[i].year;
 
+  if (year !== "Unknown") {
+    if (year < oldestYear ) {
+      oldestYear = year; 
+    } if (year > newestYear) {
+      newestYear = year;
+    }
   }
-  
 }
+
+
+
 console.log(oldestYear);
 console.log(newestYear);
