@@ -181,6 +181,16 @@ for (let i = 0; i < catalog.length; i++) {
   }
 }
 
+// for (let album of catalog) {
+//   if (album.year !== "Unknown") {
+//   if (album.year < oldestYear) {
+//     oldestYear = album.year;
+//   }
+//   if (album.year > newestYear) {
+//     newestYear =  album.year;
+//   }
+//   }
+// }
 
 
 console.log(oldestYear);
