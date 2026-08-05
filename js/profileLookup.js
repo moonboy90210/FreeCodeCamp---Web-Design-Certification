@@ -27,7 +27,7 @@ let contacts = [
 
 function lookUpProfile(name, prop) {
 	for (let i = 0; i < contacts.length; i++) {
-		if (contacts[i].name === name) {
+		if (contacts[i].firstName || contacts[i].lastName === name) {
 			  if (contacts[i].hasOwnProperty(prop)) {
         return contacts[i][prop];
 		} else {
@@ -38,4 +38,4 @@ function lookUpProfile(name, prop) {
 	return "No such contact";
 }
 
-console.log(lookUpProfile("Kristian", "lastName"));
+console.log(lookUpProfile("Akira", "number"));
