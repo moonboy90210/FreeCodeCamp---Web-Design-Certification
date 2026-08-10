@@ -12,35 +12,52 @@ const nightGates = [
   { id: "West", capacity: 3, queue: [5, 2, 1, 4] },
 ];
 
-
 function initializeThroughput(gates) {
-	const summary = {};
+  const summary = {};
 
   for (let i = 0; i < gates.length; i++) {
     summary[gates[i].id] = 0;
   }
   return summary;
-
 }
 
 function processGateFlow(gate, tickIndex) {
- const currentTickQueue = gate.queue[tickIndex];
+  const currentTickQueue = gate.queue[tickIndex];
 
-let processed = 0;
+  let processed = 0;
 
-while (currentTickQueue > 0 || processed < gate.capacity) {
-  currentTickQueue --;
-  processed ++;
-
-}
-return {processed: processed, overflow: currentTickQueue};
+  while (currentTickQueue > 0 || processed < gate.capacity) {
+    currentTickQueue--;
+    processed++;
+  }
+  return { processed: processed, overflow: currentTickQueue };
 }
 
 function rerouteOverflow(gates, currentGate, tickIndex, overflowAmount) {
-    let currentIndex = gates.indexOf(currentGate);
-     const nextGateIndex = (currentIndex + 1) % gates.length;
+  let currentIndex = gates.indexOf(currentGate);
+  const nextGateIndex = (currentIndex + 1) % gates.length;
+
+  gates[nextGateIndex].queue[tickIndex] += overflowAmount;
+  console.log(
+    overflowAmount + " attendees rerouted to " + gates[nextGateIndex].id,
+  );
 }
 
-let set = initializeThroughput([{ id: "North", capacity: 5, queue: [1, 2, 3] }]);
+function handleGateAtTick(gates, gate, tickIndex, throughputSummary) {
+
+console.log(`\nProcessing${gate.id} ...`);
+console.log(gate.queue[tickIndex] + " attendees arriving.");
+
+let result = processGateFlow(gate, tickIndex);
+
+}
+
+let set = initializeThroughput([
+  { id: "North", capacity: 5, queue: [1, 2, 3] },
+]);
 
 console.log(set);
+
+let seti = rerouteOverflow(morningGates, 0, 1, 2);
+
+console.log(seti);
