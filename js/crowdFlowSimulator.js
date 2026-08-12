@@ -48,13 +48,11 @@ function handleGateAtTick(gates, gate, tickIndex, throughputSummary) {
 console.log(`\nProcessing${gate.id} ...`);
 console.log(gate.queue[tickIndex] + " attendees arriving.");
 
-let result = processGateFlow(gate, tickIndex);
-
+const result = processGateFlow(gate, tickIndex);
+result.processed += throughputSummary[gate.id];
 }
 
-let set = initializeThroughput([
-  { id: "North", capacity: 5, queue: [1, 2, 3] },
-]);
+let set = initializeThroughput([{ id: "North", capacity: 5, queue: [1, 2, 3] }]);
 
 console.log(set);
 
