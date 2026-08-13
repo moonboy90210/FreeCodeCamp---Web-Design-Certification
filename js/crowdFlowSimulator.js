@@ -81,13 +81,15 @@ const tickIndex = 0;
 
 while (tickIndex < maxTicks) {
   console.log("\nTick " + (tickIndex + 1));
-  
+  for (let gate of gates) {
+    handleGateAtTick(gates, gate, tickIndex, throughputSummary);
+  }
+    tickIndex++; 
+    printSummary(throughputSummary)
+  }
 }
 
-
-
-
-}
+simulateFestival(morningGates, "morning");
 
 // let set = initializeThroughput([{ id: "North", capacity: 5, queue: [1, 2, 3] }]);
 
