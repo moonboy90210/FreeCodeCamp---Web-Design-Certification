@@ -49,13 +49,50 @@ console.log(`\nProcessing${gate.id} ...`);
 console.log(gate.queue[tickIndex] + " attendees arriving.");
 
 const result = processGateFlow(gate, tickIndex);
-result.processed += throughputSummary[gate.id];
+ throughputSummary[gate.id] += result.processed;
+
+ if (result.overflow > 0) {
+  console.log(`Overflow of ${result.overflow} attendees. Rerouting..`);
+ }
+ rerouteOverflow(gates, gate, tickIndex, result.overflow)
+
+//  return throughputSummary;
+
 }
 
-let set = initializeThroughput([{ id: "North", capacity: 5, queue: [1, 2, 3] }]);
+function printSummary(summary) {
+console.log("\nThroughput Summary");
 
-console.log(set);
+for (let gate in summary) {
+  console.log(gate + ": " + summary[gate] + " attendees processed");
+}
+}
 
-let seti = rerouteOverflow(morningGates, 0, 1, 2);
+console.log(printSummary({ North: 5, East: 3, South: 4, West: 2 }));
 
-console.log(seti);
+
+function simulateFestival(gates, timeBlock) {
+console.log("\n" + timeBlock + " Simulation");
+
+const throughputSummary = initializeThroughput(gates);    
+
+const maxTicks = gates[0].queue.length;
+const tickIndex = 0;
+
+while (tickIndex < maxTicks) {
+  console.log("\nTick " + (tickIndex + 1));
+  
+}
+
+
+
+
+}
+
+// let set = initializeThroughput([{ id: "North", capacity: 5, queue: [1, 2, 3] }]);
+
+// console.log(set);
+
+// let seti = rerouteOverflow(morningGates, 0, 1, 2);
+
+// console.log(seti);
