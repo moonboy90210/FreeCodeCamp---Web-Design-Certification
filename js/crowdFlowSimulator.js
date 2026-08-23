@@ -90,6 +90,8 @@ while (tickIndex < maxTicks) {
 }
 
 simulateFestival(morningGates, "morning");
+simulateFestival(nightGates, "night");
+
 
 // let set = initializeThroughput([{ id: "North", capacity: 5, queue: [1, 2, 3] }]);
 
