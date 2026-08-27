@@ -19,6 +19,7 @@ function parseShipment(rawData) {
 		const each = rawData[i];
 		const splits = each.split("|");
 
+
 		
 
 		const sku = splits[0].trim();
@@ -28,7 +29,7 @@ function parseShipment(rawData) {
 		const zone = splits[4];
 
 		if (!zone) {
-			console.log("general") ;
+			console.log("general");
 		}
 
 		shipment.push(sku, name, qty, expires, zone);
