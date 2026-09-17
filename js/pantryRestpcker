@@ -18,9 +18,7 @@ function parseShipment(rawData) {
 	for (let i = 0; i < rawData.length; i++) {
 		const each = rawData[i];
 		const splits = each.split("|");
-
-
-		
+	
 
 		const sku = splits[0].trim();
 		const name = splits[1].trim();
@@ -39,3 +37,12 @@ function parseShipment(rawData) {
 }
 
 console.log(parseShipment(rawData));
+
+
+for (let i = 0; i < str.length; i++) {
+
+}
+for (let index = 0; index < array.length; index++) {
+	const element = array[index];
+	
+}
