@@ -18,6 +18,7 @@ function parseShipment(rawData) {
 	for (let i = 0; i < rawData.length; i++) {
 		const each = rawData[i];
 		const splits = each.split("|");
+
 	
 
 		const sku = splits[0].trim();
@@ -38,11 +39,13 @@ function parseShipment(rawData) {
 
 console.log(parseShipment(rawData));
 
+function planRestock(pantry, shipment) {
 
-for (let i = 0; i < str.length; i++) {
+	if (pantry === shipment) {
 
-}
-for (let index = 0; index < array.length; index++) {
-	const element = array[index];
-	
+	}
+const type = ["restock", "discard", "donate"]
+
+
+	return [`${type}, ${shipment}`]
 }
