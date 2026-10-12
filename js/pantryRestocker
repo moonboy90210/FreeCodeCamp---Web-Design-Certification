@@ -29,7 +29,7 @@ function parseShipment(rawData) {
 
 		if (!zone) {
 			console.log("general");
-		}
+		}	
 
 		shipment.push(sku, name, qty, expires, zone);
 
