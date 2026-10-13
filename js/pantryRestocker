@@ -1,6 +1,18 @@
 const pantry = [
-  { sku: "A10", name: "Tomatoes", qty: 4, expires: "2027-01-01", zone: "fridge" },
-  { sku: "D43", name: "Pineapples", qty: 2, expires: "2020-01-01", zone: "general" }
+  {
+    sku: "A10",
+    name: "Tomatoes",
+    qty: 4,
+    expires: "2027-01-01",
+    zone: "fridge",
+  },
+  {
+    sku: "D43",
+    name: "Pineapples",
+    qty: 2,
+    expires: "2020-01-01",
+    zone: "general",
+  },
 ];
 
 const rawData = [
@@ -9,43 +21,36 @@ const rawData = [
   "C32|Eggs|3|2027-01-01|fridge",
   "C32|Eggs|3|2027-01-01",
   "D43|Pineapples|0|2027-01-01",
-  "E54|Peppers|-1|2027-01-01|fridge"
+  "E54|Peppers|-1|2027-01-01|fridge",
 ];
 
 function parseShipment(rawData) {
-	const shipment = [];
+  const shipment = [];
 
-	for (let i = 0; i < rawData.length; i++) {
-		const each = rawData[i];
-		const splits = each.split("|");
+  for (let i = 0; i < rawData.length; i++) {
+    const splits = rawData[i].split("|");
 
-	
+    //Create a new object with keys and the required properties.
+    const item = {
+      sku: splits[0].trim(),
+      name: splits[1].trim(),
+      qty: Number(splits[2]),
+      expires: splits[3].trim(),
+      zone: splits[4] ? splits[4].trim() : "general",
+    };
 
-		const sku = splits[0].trim();
-		const name = splits[1].trim();
-		const qty = Number(splits[2]);
-		const expires = splits[3].trim();
-		const zone = splits[4];
+    shipment.push(item);
+  }
 
-		if (!zone) {
-			console.log("general");
-		}	
-
-		shipment.push(sku, name, qty, expires, zone);
-
-	}
-	return shipment;
+  return shipment;
 }
 
 console.log(parseShipment(rawData));
 
 function planRestock(pantry, shipment) {
+  if (pantry === shipment) {
+  }
+  const type = ["restock", "discard", "donate"];
 
-	if (pantry === shipment) {
-
-	}
-const type = ["restock", "discard", "donate"]
-
-
-	return [`${type}, ${shipment}`]
+  return [`${type}, ${shipment}`];
 }
