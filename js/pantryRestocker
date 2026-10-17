@@ -37,6 +37,7 @@ function parseShipment(rawData) {
       qty: Number(splits[2]),
       expires: splits[3].trim(),
       zone: splits[4] ? splits[4].trim() : "general",
+
     };
 
     shipment.push(item);
@@ -47,10 +48,11 @@ function parseShipment(rawData) {
 
 console.log(parseShipment(rawData));
 
-function planRestock(pantry, shipment) {
+function planRestock(pantry, shipment) { 
+  const action = []
   if (pantry === shipment) {
   }
   const type = ["restock", "discard", "donate"];
 
-  return [`${type}, ${shipment}`];
+  return [`${type}, ${shipment}`];                
 }
