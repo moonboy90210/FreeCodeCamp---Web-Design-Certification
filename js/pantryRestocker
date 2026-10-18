@@ -26,13 +26,22 @@ const rawData = [
 
 function parseShipment(rawData) {
   const shipment = [];
+  const seenSKUs = [];
 
   for (let i = 0; i < rawData.length; i++) {
     const splits = rawData[i].split("|");
 
+    const sku = splits[0].trim();
+
+    if(seenSKUs.includes(sku)) {
+      continue;
+    }
+
+    seenSKUs.push(sku);
+
     //Create a new object with keys and the required properties.
     const item = {
-      sku: splits[0].trim(),
+      sku: sku,
       name: splits[1].trim(),
       qty: Number(splits[2]),
       expires: splits[3].trim(),
@@ -49,10 +58,15 @@ function parseShipment(rawData) {
 console.log(parseShipment(rawData));
 
 function planRestock(pantry, shipment) { 
-  const action = []
+  const actions = []
+
   if (pantry === shipment) {
   }
-  const type = ["restock", "discard", "donate"];
+
+  if (shipment <= 0)  {
+    type = [1];
+  }
+  if (shipment)
 
   return [`${type}, ${shipment}`];                
 }
