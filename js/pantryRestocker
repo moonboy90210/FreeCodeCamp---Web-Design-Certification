@@ -111,6 +111,26 @@ function groupByZone(actions) {
   return grouped;
 }
 
+
 function clonePantry(pantry) {
-  
+  const clone = [];
+
+  for (let item of pantry) {
+    clone.push({
+      sku: item.sku,
+      name: item.name,
+      qty: item.qty,
+      expires: item.expires,
+      zone: item.zone
+    });
+  }
+
+  return clone;
 }
+
+const shipment = parseShipment(rawData);
+const pantryCopy = clonePantry(pantry);
+const actions = planRestock(pantryCopy, shipment);
+const grouped = groupByZone(actions);
+
+console.log(grouped);
