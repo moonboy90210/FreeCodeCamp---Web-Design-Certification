@@ -1,0 +1,11 @@
+const collection = {
+	101: {
+	 title: "Golden Mask",
+	  category: "Ceremonial",
+	  curator: {
+		id: 201,
+		name: "Earl Sinclair"
+	  }
+	}
+	
+};
