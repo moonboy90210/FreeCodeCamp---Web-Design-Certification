@@ -30,3 +30,14 @@ const collection = {
 
 console.log(collection[101].title);
 console.log(collection[101].curator.name);
+
+function getArtifactTitle(id) {
+	const artifact = [];
+	collection[id];
+
+
+	return artifact.title;
+
+
+
+}
