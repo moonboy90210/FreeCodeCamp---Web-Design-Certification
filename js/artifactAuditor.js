@@ -33,10 +33,11 @@ console.log(collection[101].curator.name);
 
 function getArtifactTitle(id) {
 	const artifact = [];
-	collection[id];
+	
+	push.collection[id];
 
 
-	return artifact.title;
+	return artifact.title; 
 
 
 
