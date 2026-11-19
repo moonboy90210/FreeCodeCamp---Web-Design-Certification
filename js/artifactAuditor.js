@@ -32,13 +32,16 @@ console.log(collection[101].title);
 console.log(collection[101].curator.name);
 
 function getArtifactTitle(id) {
-	const artifact = [];
-	
-	push.collection[id];
+	const artifact = collection[id];
 
-
+if (artifact) {
 	return artifact.title; 
+	
+} else {
+	return "Artifact not found";
+}
 
 
 
 }
+console.log(getArtifactTitle(103));
