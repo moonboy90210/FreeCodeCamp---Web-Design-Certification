@@ -39,9 +39,16 @@ if (artifact) {
 	
 } else {
 	return "Artifact not found";
+	
+} 
+
+}
+console.log(getArtifactTitle(102));
+
+function addTag(id, tag){
+if (tags.includes(tag)) {
+	push(artifact.tags)
+	
 }
 
-
-
 }
-console.log(getArtifactTitle(103));
