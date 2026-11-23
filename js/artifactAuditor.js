@@ -46,9 +46,11 @@ if (artifact) {
 console.log(getArtifactTitle(102));
 
 function addTag(id, tag){
+
 if (tags.includes(tag)) {
+
 	push(artifact.tags)
-	
+
 }
 
 }
