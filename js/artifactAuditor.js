@@ -47,9 +47,16 @@ console.log(getArtifactTitle(102));
 
 function addTag(id, tag){
 
-if (tags.includes(tag)) {
+	 const artifact = collection[id];	
 
-	push(artifact.tags)
+
+	  if (!artifact) {
+    return;
+  }
+  
+	if (!artifact.tags.includes(tag)) {
+
+	artifact.tags.push(tag);
 
 }
 
