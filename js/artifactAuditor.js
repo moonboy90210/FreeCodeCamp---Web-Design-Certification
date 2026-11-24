@@ -53,7 +53,7 @@ function addTag(id, tag){
 	  if (!artifact) {
     return;
   }
-  
+
 	if (!artifact.tags.includes(tag)) {
 
 	artifact.tags.push(tag);
@@ -61,3 +61,7 @@ function addTag(id, tag){
 }
 
 }
+
+console.log(addTag(101, "royal"));
+
+console.log(collection[101].tags);
