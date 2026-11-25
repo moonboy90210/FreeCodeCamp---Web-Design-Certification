@@ -74,6 +74,10 @@ function moveArtifact(id, gallery, year) {
 
 }
 
+console.log(moveArtifact(102, "Hall B", 2026));
+
+console.log(collection[102].locations);
+
 console.log(addTag(101, "royal"));
 
 console.log(collection[101].tags);
